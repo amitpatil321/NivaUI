@@ -5,3 +5,9 @@ export default {
   component: Card,
   tags: ["autodocs"],
 };
+
+export const Primary = {
+  args: {
+    children: "Card",
+  },
+};
