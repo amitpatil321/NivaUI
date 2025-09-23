@@ -1,0 +1,13 @@
+{
+  "name": "niva",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Niva UI",
+  "main": "index.js",
+  "author": "Amit",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
