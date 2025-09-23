@@ -1,11 +1,54 @@
-type ButtonProps = {
-  children: React.ReactElement | string;
-};
+import { cva, type VariantProps } from "class-variance-authority";
+import { twMerge } from "tailwind-merge";
 
-const Button = ({ children }: ButtonProps) => {
+const buttonStyle = cva(
+  "flex flex-row justify-center items-center self-center gap-8 rounded-lg focus:outline-none font-sans transition-colors",
+  {
+    variants: {
+      variant: {
+        primary:
+          "bg-bg-brand text-red-300 text-text-brand-on-brand hover:bg-bg-brand-hover",
+        neutral:
+          "bg-bg-neutral-tertiary border border-border-neutral-secondary text-text-default hover:bg-bg-neutral-tertiary-hover",
+        subtle:
+          "text-bg-neutral border border-transparent hover:text-text-default hover:border-border-default",
+      },
+      size: {
+        sm: "px-2 py-2 text-sm",
+        md: "px-3 py-3 text-base",
+      },
+      disabled: {
+        true: "border-bg-disabled text-text-disabled-on-disabled bg-bg-disabled hover:bg-bg-disabled",
+        false: "",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+      size: "md",
+      disabled: false,
+    },
+  }
+);
+
+type ButtonVariants = VariantProps<typeof buttonStyle>;
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  ButtonVariants;
+
+const Button = ({
+  variant,
+  size,
+  disabled = false,
+  children,
+  ...props
+}: ButtonProps) => {
   return (
-    <button className="flex flex-row justify-center items-center self-center gap-8 bg-orange-500 hover:bg-orange-600 px-3 py-3 rounded-lg focus:outline-none font-sans text-white text-base transition-colors">
-      {children}
+    <button
+      className={twMerge(buttonStyle({ variant, size, disabled }))}
+      type="button"
+      {...props}
+      disabled={disabled}
+    >
+      {children && children}
     </button>
   );
 };
