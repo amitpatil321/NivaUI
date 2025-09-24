@@ -7,7 +7,7 @@ const buttonStyle = cva(
     variants: {
       variant: {
         primary:
-          "bg-bg-brand text-red-300 text-text-brand-on-brand hover:bg-bg-brand-hover",
+          "bg-bg-brand border border-border-brand text-red-300 text-text-brand-on-brand hover:bg-bg-brand-hover",
         neutral:
           "bg-bg-neutral-tertiary border border-border-neutral-secondary text-text-default hover:bg-bg-neutral-tertiary-hover",
         subtle: "text-bg-neutral hover:border hover:border-border-default",
@@ -17,7 +17,7 @@ const buttonStyle = cva(
         md: "px-3 py-3 text-base",
       },
       disabled: {
-        true: "border-bg-disabled text-text-disabled-on-disabled bg-bg-disabled hover:bg-bg-disabled",
+        true: "border-bg-disabled border text-text-disabled-on-disabled bg-bg-disabled hover:bg-bg-disabled",
         false: "",
       },
     },
