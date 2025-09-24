@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
 const buttonStyle = cva(
-  "flex flex-row justify-center items-center self-center gap-8 rounded-lg focus:outline-none font-sans transition-colors",
+  "flex flex-row justify-center items-center self-center gap-8 rounded-lg focus:outline-none font-sans",
   {
     variants: {
       variant: {
@@ -10,8 +10,7 @@ const buttonStyle = cva(
           "bg-bg-brand text-red-300 text-text-brand-on-brand hover:bg-bg-brand-hover",
         neutral:
           "bg-bg-neutral-tertiary border border-border-neutral-secondary text-text-default hover:bg-bg-neutral-tertiary-hover",
-        subtle:
-          "text-bg-neutral border border-transparent hover:text-text-default hover:border-border-default",
+        subtle: "text-bg-neutral hover:border hover:border-border-default",
       },
       size: {
         sm: "px-2 py-2 text-sm",
