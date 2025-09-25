@@ -2,9 +2,13 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
 const buttonClasses = cva(
-  "flex flex-row justify-center items-center self-center gap-8 rounded-lg focus:outline-none font-sans",
+  "flex flex-row justify-center items-center self-center gap-8 rounded-lg focus:outline-none font-sans text-base",
   {
     variants: {
+      kind: {
+        default: "",
+        danger: "",
+      },
       variant: {
         primary:
           "bg-bg-brand border border-border-brand text-text-brand-on-brand hover:bg-bg-brand-hover",
@@ -26,18 +30,36 @@ const buttonClasses = cva(
       size: "md",
       disabled: false,
     },
+    compoundVariants: [
+      {
+        kind: "danger",
+        variant: "primary",
+        class:
+          "border-border-danger-secondary bg-bg-danger text-text-danger-on-danger hover:border-border-danger hover:bg-bg-danger-hover",
+      },
+      {
+        kind: "danger",
+        variant: "subtle",
+        class:
+          "text-text-danger hover:border-border-danger hover:bg-bg-danger-tertiary-hover",
+        // class:
+        //   "text-text-danger hover:border hover: border-border-danger hover:bg-bg-danger-tertiary-hover",
+      },
+    ],
   }
 );
 
 type ButtonVariants = VariantProps<typeof buttonClasses>;
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  kind?: ButtonVariants["kind"];
   variant?: ButtonVariants["variant"];
-  size?: "sm" | "md";
+  size?: ButtonVariants["size"];
   disabled?: boolean;
 };
 
 const Button = ({
+  kind,
   variant,
   size,
   disabled = false,
@@ -46,7 +68,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={twMerge(buttonClasses({ variant, size, disabled }))}
+      className={twMerge(buttonClasses({ kind, variant, size, disabled }))}
       type="button"
       {...props}
       disabled={disabled}

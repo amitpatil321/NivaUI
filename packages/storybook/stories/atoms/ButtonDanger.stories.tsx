@@ -2,7 +2,7 @@ import { Button } from "@niva/ui";
 import { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta = {
-  title: "Components/Atoms/Button",
+  title: "Components/Atoms/Button/Danger",
   component: Button,
   tags: ["autodocs"],
   argTypes: {
@@ -33,22 +33,18 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary = {
+export const Default = {
   args: {
-    children: "Primary",
-  },
-};
-
-export const Neutral = {
-  args: {
-    variant: "neutral",
-    children: "Neutral",
+    kind: "danger",
+    variant: "primary",
+    children: "Danger",
   },
 };
 
 export const Subtle = {
   args: {
+    kind: "danger",
     variant: "subtle",
-    children: "Subtle",
+    children: "Button",
   },
 };
