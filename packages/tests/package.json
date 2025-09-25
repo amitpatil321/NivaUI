@@ -18,6 +18,7 @@
     "@vitest/coverage-v8": "3.2.4",
     "@vitest/ui": "3.2.4",
     "jsdom": "^27.0.0",
+    "storybook-dark-mode": "^4.0.2",
     "vitest": "^3.2.4"
   },
   "dependencies": {

@@ -1,5 +1,5 @@
 /** @type { import('@storybook/react-vite').Preview } */
-
+import { themes } from "@storybook/theming";
 import "./tailwind.css";
 
 const preview = {
@@ -23,6 +23,15 @@ const preview = {
           orderedList: false,
         },
       },
+    },
+    darkMode: {
+      stylePreview: true,
+      dark: { ...themes.dark },
+      light: { ...themes.light },
+      darkClass: "dark",
+      lightClass: "light",
+      current: "light",
+      classTarget: "body",
     },
   },
 };
