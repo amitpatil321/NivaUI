@@ -1,10 +1,13 @@
 import "./App.css";
-import Button from "./components/atoms/Button";
+import ButtonDemo from "./demo/ButtonDemo";
+import IconButton from "./demo/IconButton";
 
 function App() {
   return (
-    <div className="flex justify-center items-center pt-12 h-full">
-      <Button>Hello World!</Button>
+    <div className="flex flex-col justify-start items-center mt-8 h-dvh">
+      <ButtonDemo />
+      {/* <ButtonGroupDemo /> */}
+      <IconButton />
     </div>
   );
 }

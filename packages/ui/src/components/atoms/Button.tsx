@@ -8,6 +8,7 @@ const buttonClasses = cva(
       kind: {
         default: "",
         danger: "",
+        icon: "rounded-full leading-none",
       },
       variant: {
         primary:
@@ -17,11 +18,11 @@ const buttonClasses = cva(
         subtle: "text-bg-neutral hover:border hover:border-border-default",
       },
       size: {
-        sm: "px-2 py-2 text-sm",
+        sm: "px-2 py-2 text-sm leading-none",
         md: "px-3 py-3 text-base",
       },
       disabled: {
-        true: "border-bg-disabled border text-text-disabled-on-disabled bg-bg-disabled hover:bg-bg-disabled",
+        true: "border-bg-disabled border cursor-not-allowed text-text-disabled-on-disabled bg-bg-disabled hover:bg-bg-disabled",
         false: "",
       },
     },
@@ -42,8 +43,30 @@ const buttonClasses = cva(
         variant: "subtle",
         class:
           "text-text-danger hover:border-border-danger hover:bg-bg-danger-tertiary-hover",
-        // class:
-        //   "text-text-danger hover:border hover: border-border-danger hover:bg-bg-danger-tertiary-hover",
+      },
+      {
+        kind: "icon",
+        variant: "primary",
+        class:
+          "border-border-brand bg-bg-brand text-icon-brand-on-brand hover:bg-bg-brand-hover hover:border-border-brand",
+      },
+      {
+        kind: "icon",
+        variant: "neutral",
+        class:
+          "text-icon-neutral border-border-default bg-bg-default-secondary hover:text-icon-default hover:border-border-default hover:bg-bg-default-secondary-hover",
+      },
+      {
+        kind: "icon",
+        variant: "subtle",
+        class:
+          "text-icon-default hover:text-icon-default hover:bg-bg-default-hover hover:border-none",
+      },
+      {
+        kind: "icon",
+        disabled: true,
+        class:
+          "text-border-disabled border-border-disabled bg-bg-disabled hover:bg-bg-disabled hover:border-border-disabled",
       },
     ],
   }
@@ -66,6 +89,12 @@ const Button = ({
   children,
   ...props
 }: ButtonProps) => {
+  if (!children) {
+    console.warn("Button rendered without children!");
+    return null;
+  }
+
+  const isIconOnly = kind === "icon" && children;
   return (
     <button
       className={twMerge(buttonClasses({ kind, variant, size, disabled }))}
@@ -73,7 +102,7 @@ const Button = ({
       {...props}
       disabled={disabled}
     >
-      {children && children}
+      {isIconOnly ? <span className="inline-flex">{children}</span> : children}
     </button>
   );
 };
