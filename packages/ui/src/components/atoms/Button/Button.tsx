@@ -15,11 +15,12 @@ const buttonClasses = cva(
           "bg-bg-brand border border-border-brand text-text-brand-on-brand hover:bg-bg-brand-hover",
         neutral:
           "bg-bg-neutral-tertiary border border-border-neutral-secondary text-text-default hover:bg-bg-neutral-tertiary-hover",
-        subtle: "text-bg-neutral hover:border hover:border-border-default",
+        subtle:
+          "text-bg-neutral border border-[#fff] hover:border hover:border-border-default",
       },
       size: {
         sm: "px-2 py-2 text-sm leading-none",
-        md: "px-3 py-3 text-base",
+        md: "px-3 py-3 text-base leading-4",
       },
       disabled: {
         true: "border-bg-disabled border cursor-not-allowed text-text-disabled-on-disabled bg-bg-disabled hover:bg-bg-disabled",
@@ -53,14 +54,12 @@ const buttonClasses = cva(
       {
         kind: "icon",
         variant: "neutral",
-        class:
-          "text-icon-neutral border-border-default bg-bg-default-secondary hover:text-icon-default hover:border-border-default hover:bg-bg-default-secondary-hover",
+        class: "text-icon-default border-border-default bg-transparent",
       },
       {
         kind: "icon",
         variant: "subtle",
-        class:
-          "text-icon-default hover:text-icon-default hover:bg-bg-default-hover hover:border-none",
+        class: "text-icon-default",
       },
       {
         kind: "icon",

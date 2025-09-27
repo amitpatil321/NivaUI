@@ -23,6 +23,7 @@ export default {
       "9xl": ["8rem", { lineHeight: "1" }],
     },
     colors: {
+      transparent: "transparent",
       bg: {
         default: {
           DEFAULT: "hsl(0, 0%, 100%)",
