@@ -1,0 +1,65 @@
+import { cva, type VariantProps } from "class-variance-authority";
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
+import AvatarGroup from "./AvatarGroup";
+
+const avatarClasses = cva(
+  "flex justify-center items-center bg-bg-brand shadow-lg overflow-hidden text-text-brand-on-brand",
+  {
+    variants: {
+      shape: {
+        circle: "rounded-full",
+        square: "rounded-lg",
+      },
+      size: {
+        sm: "w-6 h-6 text-sm",
+        md: "w-8 h-8 text-base",
+        lg: "w-14 h-14 text-lg",
+      },
+    },
+    defaultVariants: {
+      shape: "circle",
+      size: "md",
+    },
+    compoundVariants: [],
+  }
+);
+
+type ButtonVariants = VariantProps<typeof avatarClasses>;
+
+type AvatarProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  shape?: ButtonVariants["shape"];
+  size?: ButtonVariants["size"];
+  icon?: React.ReactNode;
+  src?: string;
+  children?: React.ReactNode;
+};
+
+const Avatar = ({ shape, size, icon, src, children }: AvatarProps) => {
+  const [hasError, setError] = useState(false);
+  let content;
+
+  if (src && !hasError) {
+    content = (
+      <img
+        src={src}
+        alt="avatar"
+        style={{ objectFit: "cover", width: "100%", height: "100%" }}
+        onError={() => setError(true)}
+      />
+    );
+  } else if (icon) {
+    content = icon;
+  } else if (children) {
+    content = children;
+  } else content = <span>NA</span>;
+
+  return (
+    <div className={twMerge(avatarClasses({ shape, size }))}>{content}</div>
+  );
+};
+
+Avatar.displayName = "Avatar";
+Avatar.Group = AvatarGroup;
+
+export default Avatar;

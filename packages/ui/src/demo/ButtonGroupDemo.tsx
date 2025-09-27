@@ -1,4 +1,4 @@
-import Button from "../components/atoms/Button";
+import Button from "../components/atoms/Button/Button";
 import ButtonGroup from "../components/molecule/ButtonGroup";
 
 function ButtonGroupDemo() {

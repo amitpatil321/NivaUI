@@ -1,5 +1,5 @@
 import { HomeIcon } from "lucide-react";
-import Button from "../components/atoms/Button";
+import Button from "../components/atoms/Button/Button";
 
 function IconButton() {
   return (

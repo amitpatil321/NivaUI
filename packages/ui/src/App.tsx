@@ -1,13 +1,13 @@
 import "./App.css";
-import ButtonDemo from "./demo/ButtonDemo";
-import IconButton from "./demo/IconButton";
+import AvatarDemo from "./demo/AvatarDemo";
 
 function App() {
   return (
     <div className="flex flex-col justify-start items-center mt-8 h-dvh">
-      <ButtonDemo />
+      {/* <ButtonDemo /> */}
       {/* <ButtonGroupDemo /> */}
-      <IconButton />
+      {/* <IconButton /> */}
+      <AvatarDemo />
     </div>
   );
 }
