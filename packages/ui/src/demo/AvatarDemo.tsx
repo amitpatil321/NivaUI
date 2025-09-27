@@ -1,5 +1,6 @@
 import { User } from "lucide-react";
 import Avatar from "../components/atoms/Avatar/Avatar";
+import AvatarBlock from "../components/atoms/Avatar/AvatarBlock";
 
 const AvatarDemo = () => {
   return (
@@ -90,6 +91,17 @@ const AvatarDemo = () => {
             src="https://randomuser.me/api/portraits/men/45.jpg"
           />
         </Avatar.Group>
+      </div>
+      <div className="flex justify-center items-center gap-4 pt-10 w-52">
+        <AvatarBlock
+          title="Prateek Patil"
+          description="More people than ever are building component driven UIs"
+        >
+          <Avatar
+            size="lg"
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+          />
+        </AvatarBlock>
       </div>
     </>
   );

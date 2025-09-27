@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import AvatarBlock from "./AvatarBlock";
 import AvatarGroup from "./AvatarGroup";
 
 const avatarClasses = cva(
@@ -14,7 +15,7 @@ const avatarClasses = cva(
       size: {
         sm: "w-6 h-6 text-sm",
         md: "w-8 h-8 text-base",
-        lg: "w-14 h-14 text-lg",
+        lg: "w-10 h-10 text-lg",
       },
     },
     defaultVariants: {
@@ -61,5 +62,6 @@ const Avatar = ({ shape, size, icon, src, children }: AvatarProps) => {
 
 Avatar.displayName = "Avatar";
 Avatar.Group = AvatarGroup;
+Avatar.Block = AvatarBlock;
 
 export default Avatar;
