@@ -27,8 +27,14 @@ const AvatarGroup = ({ layout, children }: AvatarGroupProps) => {
   const remaining = childArray.slice(3);
 
   return (
-    <div className="flex justify-center items-center gap-2">
-      <div className={twMerge(AvatarGroupClasses({ layout }))}>
+    <div
+      data-testid="avatar-group"
+      className="flex justify-center items-center gap-2"
+    >
+      <div
+        data-testid="avatar-group-inner"
+        className={twMerge(AvatarGroupClasses({ layout }))}
+      >
         {firstThree}
       </div>
       <span className="text-text-default-secondary">+{remaining.length}</span>

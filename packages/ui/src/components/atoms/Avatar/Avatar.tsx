@@ -56,7 +56,12 @@ const Avatar = ({ shape, size, icon, src, children }: AvatarProps) => {
   } else content = <span>NA</span>;
 
   return (
-    <div className={twMerge(avatarClasses({ shape, size }))}>{content}</div>
+    <div
+      data-testid="avatar"
+      className={twMerge(avatarClasses({ shape, size }))}
+    >
+      {content}
+    </div>
   );
 };
 

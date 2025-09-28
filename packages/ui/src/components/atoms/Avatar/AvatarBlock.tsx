@@ -6,7 +6,7 @@ interface AvatarBlockProps {
 
 const AvatarBlock = ({ title, description, children }: AvatarBlockProps) => {
   return (
-    <div className="flex gap-3 font-sans text-base">
+    <div data-testid="avatar-block" className="flex gap-3 font-sans text-base">
       <div>{children}</div>
       <div>
         <div className="font-bold text-text-default-secondary">{title}</div>
