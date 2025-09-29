@@ -20,7 +20,8 @@ const config = {
   addons: [
     getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-docs"),
-    "storybook-dark-mode",
+    "@storybook-dark-mode",
+    "@storybook/addon-a11y",
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),

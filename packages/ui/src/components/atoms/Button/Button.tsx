@@ -37,7 +37,7 @@ const buttonClasses = cva(
         kind: "danger",
         variant: "primary",
         class:
-          "border-border-danger-secondary bg-bg-danger text-text-danger-on-danger hover:border-border-danger hover:bg-bg-danger-hover",
+          "border-border-danger-secondary bg-bg-danger  text-text-danger-on-danger hover:border-border-danger hover:bg-bg-danger-hover",
       },
       {
         kind: "danger",
@@ -100,6 +100,7 @@ const Button = ({
       type="button"
       {...props}
       disabled={disabled}
+      aria-label="button"
     >
       {isIconOnly ? <span className="inline-flex">{children}</span> : children}
     </button>
