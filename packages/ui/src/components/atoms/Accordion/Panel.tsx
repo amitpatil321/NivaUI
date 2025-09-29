@@ -27,6 +27,7 @@ export const Panel = (props: PanelProps) => {
 
   return (
     <div
+      data-testid="accordion-panel"
       className="flex flex-col justify-center items-stretch w-full"
       onClick={() => {
         setActiveIndex(isActive ? null : id);
