@@ -29,7 +29,7 @@ describe("Avatar component", () => {
     expect(button).toBeInTheDocument();
     expect(button).toHaveClass("w-6");
     expect(button).toHaveClass("h-6");
-    expect(button).toHaveClass("text-sm");
+    expect(button).toHaveClass("text-body-small");
   });
   it("Renders medium avatar component correctly", () => {
     render(<Avatar size="md" icon={<User />} />);
@@ -37,7 +37,7 @@ describe("Avatar component", () => {
     expect(button).toBeInTheDocument();
     expect(button).toHaveClass("w-8");
     expect(button).toHaveClass("h-8");
-    expect(button).toHaveClass("text-base");
+    expect(button).toHaveClass("text-body-base");
   });
   it("Renders large avatar component correctly", () => {
     render(<Avatar size="lg" icon={<User />} />);
@@ -120,7 +120,7 @@ describe("Avatar Block component", () => {
     );
     const block = screen.getByTestId("avatar-block");
     expect(block).toBeInTheDocument();
-    expect(block).toHaveClass("flex gap-3 font-sans text-base");
+    expect(block).toHaveClass("flex gap-3 font-sans text-body-base");
     expect(block).toHaveTextContent("Prateek Patil");
     expect(block).toHaveTextContent(
       "More people than ever are building component driven UIs"

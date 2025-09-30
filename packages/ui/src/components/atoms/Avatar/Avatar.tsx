@@ -5,7 +5,7 @@ import AvatarBlock from "./AvatarBlock";
 import AvatarGroup from "./AvatarGroup";
 
 const avatarClasses = cva(
-  "flex justify-center items-center bg-bg-brand shadow-lg overflow-hidden text-text-brand-on-brand",
+  "flex justify-center items-center bg-bg-brand shadow-lg overflow-hidden !text-text-brand-on-brand",
   {
     variants: {
       shape: {
@@ -13,8 +13,8 @@ const avatarClasses = cva(
         square: "rounded-lg",
       },
       size: {
-        sm: "w-6 h-6 text-sm",
-        md: "w-8 h-8 text-base",
+        sm: "w-6 h-6 text-body-small",
+        md: "w-8 h-8 text-body-base",
         lg: "w-10 h-10 text-lg",
       },
     },
