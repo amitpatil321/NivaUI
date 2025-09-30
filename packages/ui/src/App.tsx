@@ -1,5 +1,5 @@
 import "./App.css";
-import AvatarDemo from "./demo/AvatarDemo";
+import TagsDemo from "./demo/TagsDemo";
 
 function App() {
   return (
@@ -7,7 +7,8 @@ function App() {
       {/* <ButtonDemo /> */}
       {/* <ButtonGroupDemo /> */}
       {/* <IconButton /> */}
-      <AvatarDemo />
+      {/* <AvatarDemo /> */}
+      <TagsDemo />
     </div>
   );
 }
