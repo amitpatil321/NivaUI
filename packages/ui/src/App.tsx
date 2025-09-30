@@ -1,6 +1,5 @@
 import "./App.css";
-import TagsDemo from "./demo/TagsDemo";
-import AccordionDemo from "./demo/AccordionDemo";
+import DialogDemo from "./demo/DialogDemo";
 
 function App() {
   return (
@@ -11,7 +10,8 @@ function App() {
       {/* <AvatarDemo /> */}
       <TagsDemo />
       {/* <AvatarDemo /> */}
-      <AccordionDemo />
+      {/* <AccordionDemo /> */}
+      <DialogDemo />
     </div>
   );
 }

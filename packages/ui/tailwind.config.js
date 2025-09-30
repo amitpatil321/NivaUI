@@ -4,23 +4,111 @@ export default {
   darkMode: "class",
   theme: {
     fontFamily: {
-      sans: ["Inter", "sans-serif"],
+      inter: ["Inter", "sans-serif"],
       mono: ["Roboto Mono", "monospace"],
     },
     fontSize: {
-      xs: ["0.75rem", { lineHeight: "1rem" }],
-      sm: ["0.875rem", { lineHeight: "1.25rem" }],
-      base: ["1rem", { lineHeight: "1.5rem" }],
-      lg: ["1.125rem", { lineHeight: "1.75rem" }],
-      xl: ["1.25rem", { lineHeight: "1.75rem" }],
-      "2xl": ["1.5rem", { lineHeight: "2rem" }],
-      "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
-      "4xl": ["2.25rem", { lineHeight: "2.5rem" }],
-      "5xl": ["3rem", { lineHeight: "1" }],
-      "6xl": ["3.75rem", { lineHeight: "1" }],
-      "7xl": ["4.5rem", { lineHeight: "1" }],
-      "8xl": ["6rem", { lineHeight: "1" }],
-      "9xl": ["8rem", { lineHeight: "1" }],
+      "title-hero": [
+        "72px",
+        {
+          lineHeight: "86.4px",
+          letterSpacing: "-2.16px",
+          fontWeight: "700",
+        },
+      ],
+      "title-page": [
+        "48px",
+        {
+          lineHeight: "57.6px",
+          letterSpacing: "-0.96px",
+          fontWeight: "700",
+        },
+      ],
+      subtitle: [
+        "32px",
+        {
+          lineHeight: "38.4px",
+          fontWeight: "400",
+        },
+      ],
+      heading: [
+        "24px",
+        {
+          lineHeight: "28.8px",
+          letterSpacing: "-0.48px",
+          fontWeight: "600",
+        },
+      ],
+      subheading: [
+        "20px",
+        {
+          lineHeight: "24px",
+          fontWeight: "400",
+        },
+      ],
+      "body-base": [
+        "16px",
+        {
+          lineHeight: "22.4px",
+          fontWeight: "400",
+        },
+      ],
+      "body-strong": [
+        "16px",
+        {
+          lineHeight: "22.4px",
+          fontWeight: "600",
+        },
+      ],
+      "body-emphasis": [
+        "16px",
+        {
+          lineHeight: "22.4px",
+          fontStyle: "italic",
+        },
+      ],
+      "body-link": [
+        "16px",
+        {
+          lineHeight: "22.4px",
+          textDecoration: "underline",
+        },
+      ],
+      "body-small": [
+        "14px",
+        {
+          lineHeight: "19.6px",
+          fontWeight: "400",
+        },
+      ],
+      "body-small-strong": [
+        "14px",
+        {
+          lineHeight: "19.6px",
+          fontWeight: "600",
+        },
+      ],
+      "body-code": [
+        "16px",
+        {
+          lineHeight: "16px",
+          fontFamily: "Roboto Mono, monospace",
+        },
+      ],
+      "single-line-body-base": [
+        "16px",
+        {
+          lineHeight: "16px",
+          fontWeight: "400",
+        },
+      ],
+      "single-line-body-small-strong": [
+        "14px",
+        {
+          lineHeight: "14px",
+          fontWeight: "600",
+        },
+      ],
     },
     colors: {
       transparent: "transparent",
@@ -231,6 +319,36 @@ export default {
           icon: "hsl(317, 67%, 52%)",
           "icon-on-measurement": "hsl(316, 60%, 34%)",
         },
+      },
+    },
+    extend: {
+      boxShadow: {
+        "ds-100": "0 1px 4px #0c0c0d0d",
+        "ds-200": ["0 1px 4px #0c0c0d0d", "0 1px 4px #0c0c0d1a"].join(", "),
+        "ds-300": ["0 4px 4px -1px #0c0c0d0d", "0 4px 4px -1px #0c0c0d1a"].join(
+          ", "
+        ),
+        "ds-400": [
+          "0 4px 4px -4px #0c0c0d0d",
+          "0 16px 32px -4px #0c0c0d1a",
+        ].join(", "),
+        "ds-500": [
+          "0 4px 4px -4px #0c0c0d0d",
+          "0 16px 16px -8px #0c0c0d1a",
+        ].join(", "),
+        "ds-600": "0 16px 32px -8px #0c0c0d66",
+
+        "is-100": "inset 0 1px 4px #0c0c0d0d",
+        "is-200": "inset 0 1px 4px #0c0c0d0d",
+        "is-300": "inset 0 4px 4px -1px #0c0c0d0d",
+        "is-400": "inset 0 16px 32px -4px #0c0c0d1a",
+        "is-500": "inset 0 16px 16px -8px #0c0c0d1a",
+        "is-600": "inset 0 16px 32px -8px #0c0c0d66",
+      },
+      backdropBlur: {
+        overlay: "8px",
+        layer: "12px",
+        glass: "20px",
       },
     },
   },
