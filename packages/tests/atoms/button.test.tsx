@@ -3,12 +3,13 @@ import { render, screen } from "@testing-library/react";
 
 const classes = {
   primary:
-    "bg-bg-brand border border-border-brand text-text-brand-on-brand hover:bg-bg-brand-hover",
+    "bg-bg-brand border border-border-brand !text-text-brand-on-brand hover:bg-bg-brand-hover",
   neutral:
-    "bg-bg-neutral-tertiary border border-border-neutral-secondary text-text-default hover:bg-bg-neutral-tertiary-hover",
-  subtle: "text-bg-neutral hover:border hover:border-border-default",
-  sm: "px-2 py-2 text-sm",
-  md: "px-3 py-3 text-base",
+    "bg-bg-neutral-tertiary border border-border-neutral-secondary !text-text-default hover:bg-bg-neutral-tertiary-hover",
+  subtle:
+    "!text-bg-neutral border border-[#fff] hover:border hover:border-border-default",
+  sm: "px-2 py-2 text-body-small leading-none",
+  md: "px-3 py-3 text-body-base leading-4",
   disabled:
     "border-bg-disabled border text-text-disabled-on-disabled bg-bg-disabled hover:bg-bg-disabled",
 };
