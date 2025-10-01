@@ -3,6 +3,11 @@
 NivaUI is a simple, growing React UI component library built as part of design system understanding for beginners/students. 
 While the goal is to learn and experiment with building design systems, the library is also ready to use and continues to evolve with new components, patterns, and tooling.
 
+🎨Figma Design
+---
+
+[Figma Community - Simple Design System](https://www.figma.com/design/aCiaPSrGl071ljo6KZEL3e/Simple-Design-System--Community-?t=iJRATq1RAdMVbsUL-0)
+
 ✨ Features
 ---
 
